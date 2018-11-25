@@ -13,6 +13,9 @@ gulp.task('pug', function() {
 gulp.task('sass', function() {
     return gulp.src('src/css/style.scss')
         .pipe(gp.sass())
+        .pipe(gp.autoprefixer({
+            browsers: ['last 10 versions']
+        }))
         .pipe(minCSS())
         .pipe(gulp.dest('build/'));
 })
