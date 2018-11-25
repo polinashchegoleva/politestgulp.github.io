@@ -1,0 +1,118 @@
+$main_color: #4ebbbc;
+$main_color-dark: $main_color / 1.3;
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;	box-sizing: border-box;
+}
+body {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 100%;
+}
+.card {
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  color: #3b3b3b;
+  .card__body {
+    padding-top: 50%;
+    position: relative;
+    background: $main_color;
+    .body__content {
+      width: 100%;
+      height: 100%;
+      padding: 0 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      p {
+        font-size: 3vw;
+        color: #fff;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        max-height: 6vw;
+        line-height: 3vw;
+      }
+      .quality {
+        width: calc(100% - 20px);
+        position: absolute;
+        bottom: 0;
+        ul {
+          width: 100%;
+          list-style: none;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          padding-bottom: 10px;
+          li {
+            padding: 5px;
+            font-size: .9em;
+            line-height: .9em;
+            background: #fff;
+            color: $main_color-dark;
+            cursor: pointer;
+            -webkit-transition: .4s;
+            transition: .4s;
+          }
+          li:hover {
+            background-color: $main_color-dark;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .card__description {
+    height: auto;
+    padding: 20px 0;
+    p {
+      min-height: 50px;
+      margin: 0 20px 20px 70px;
+      position: relative;
+      font-size: .8em;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+    p::before {
+      content: '1';
+      width: 50px;
+      height: 50px;
+      background: $main_color;
+      position: absolute;
+      top: -10px;
+      left: -70px;
+      border-radius: 50%;
+      color: #fff;
+      text-align: center;
+      font-size: 1.8em;
+      line-height: 50px;
+    }
+    p:nth-child(2)::before {
+      content: '2';
+    }
+    p:nth-child(3)::before {
+      content: '3';
+    }
+  }
+}
